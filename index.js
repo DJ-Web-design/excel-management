@@ -1,13 +1,14 @@
 const express = require("express"),
-	  {parse} = require("url"),
 	  {join} = require("path"),
-	  {queryParse, sendFile} = require("./Utils")
+	  {exec} = require("child_process");
 
 const app = express();
-
 const PORT = process.env.PORT || 1999;
 
-app.use(express.static(join(__dirname, "public")));
+var child;
+const public = join(__dirname, "public");
+
+app.use(express.static(public));
 app
 	.get("/",(req, res)=>{
 		res.writeHeader(200, {"Content-Type":"text/html; charset=utf-8"})
@@ -21,4 +22,7 @@ app
 		res.writeHeader(200, {"Content-Type":"text/css"});
 		res.sendFile(req.url);
 	})
-	.listen(PORT, ()=>console.log(`Listening on port ${PORT}`));
+	.listen(PORT, ()=>{
+		console.log(`Listening on port ${PORT}`);
+		child = exec(`start http://localhost:${PORT}`);
+	});
