@@ -1,3 +1,4 @@
-*.csv
-TableManagement/*.json
 node_modules
+
+Tables/**
+TablesManagement/**
