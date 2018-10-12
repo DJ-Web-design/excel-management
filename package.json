@@ -1,14 +1,14 @@
 {
   "name": "databaseTest",
   "version": "1.0.0",
-  "description": "A Scri`t for CSV Management",
+  "description": "A Script for CSV Management",
   "main": "index.js",
   "repository":"https://github.com/DJ-Web-design/excel-management",
   "scripts": {
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "David González",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
