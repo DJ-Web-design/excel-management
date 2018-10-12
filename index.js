@@ -26,10 +26,10 @@ app
 		res.sendFile(req.url);
 	})
 	.get("/change-data", (req, res)=>{
-		res.send("Change Data");
+		
 	})
 	.get("/fetch-data", (req, res)=>{
-		res.send("Fet Data");
+		
 	})
 	.listen(PORT, ()=>{
 		console.log(`Listening on port ${PORT}`);
