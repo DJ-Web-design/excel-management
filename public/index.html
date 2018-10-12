@@ -3,57 +3,31 @@
 <head>
 	<meta charset="utf-8">
 	<title>Registros Diarios</title>
-	<script src="js/vue.min.js"></script>
+	<script src="js/vue.js"></script>
 	<link rel="stylesheet" href="css/index.css">
 	<script src="components/splash-screen.js"></script>
+	<script src="components/add-table.js"></script>
+	<script src="components/app-main.js"></script>
 </head>
 <body>
 	<div id="app">
-		<!--<splash-screen v-if="splash"></splash-screen>
-		<db-content v-else></db-content>-->
-		<div id="app-main">
-			<h2 id="title">Administrador De Registos Diarios</h2>
-			<aside id="lateral">
-				<button>Crear Nuevo Registro</button>
-				<button>Editar Registros</button>
-				<button>Eliminar Registros</button>
-			</aside>
-			<div id="registros">
-				<div id="tools-container">
-					<button id="download-data">Descargar Datos</button>
-					<div id="search-control">
-						<input type="date" name="">
-						<button>Buscar</button>
-					</div>
-					<button id="add-plus">+</button>
-				</div>
-				<ul>
-					<li>
-						<span>Registro 12/23/1999</span>
-						<span>filas(10)</span>
-						<br>
-						<span>Total Ganado 100$</span>
-						<div>
-							<button>Añadir</button>
-							<button>Ver</button>
-							<button>Eliminar</button>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>	
+		<splash-screen v-if="splash"></splash-screen>
+		<app-main v-else></app-main>
 	</div>
 	<script src="js/App.js"></script>
 	<script>
-		setTimeout(()=>{
-			App.$children[0].anim = true;
-			console.log("3");
+		if (!sessionStorage.getItem("logged")) {
 			setTimeout(()=>{
-				console.log("5")
-				App.splash = false;
-				App.$children[0].anim = false;
-			}, 500)
-		}, 3000)
+				App.$children[0].anim = true;
+				setTimeout(()=>{
+					App.splash = false;
+					App.$children[0].anim = false;
+					sessionStorage.setItem("logged", true);
+				}, 500)
+			}, 3000)
+		} else {
+			App.splash = false;
+		}
 	</script>
 </body>
 </html>
