@@ -46,3 +46,25 @@ h1 {
 	width: 70%;
 	float: left;
 }
+#app-main #title {
+	text-align: center;
+}
+#app-main #tools-container {
+	position: relative;
+	height: 40px;
+}
+#app-main #tools-container #add-plus {
+	border-radius: 50%;
+	color: white;
+	width: 40px;
+	height: 40px;
+	background-color: lightblue;
+	border: none;
+	position: absolute;
+	right: 10px;
+	cursor: pointer
+}
+#app-main #tools-container #search-control {
+	margin: 5px 20%;
+	display: inline-block;
+}

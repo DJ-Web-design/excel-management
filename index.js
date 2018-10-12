@@ -1,11 +1,11 @@
-const express = require("express");
-const {parse} = require("url");
-const {queryParse, sendFile} = require("./Utils")
+const express = require("express"),
+	  {parse} = require("url"),
+	  {join} = require("path"),
+	  {queryParse, sendFile} = require("./Utils")
 
 const app = express();
 
 const PORT = process.env.PORT || 1999;
-
 
 app.use(express.static(join(__dirname, "public")));
 app

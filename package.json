@@ -1,12 +1,16 @@
 {
   "name": "databaseTest",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Scri`t for CSV Management",
   "main": "index.js",
+  "repository":"https://github.com/DJ-Web-design/excel-management",
   "scripts": {
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
