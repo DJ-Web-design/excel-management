@@ -2,7 +2,7 @@ var App = new Vue({
 	el:"#app",
 	components:{
 		"app-main":AppMain,
-		"splash-screen":SplashScreen
+		"splash-screen":SplashScreen,
 	},
 	data:{
 		splash:true,

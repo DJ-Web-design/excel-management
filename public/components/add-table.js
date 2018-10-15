@@ -4,7 +4,7 @@ var AddTable = {
 		<div id="shadow"></div>
 		<div id="container">
 			<div id="head">
-				<button>Cerrar</button>
+				<button @click="$parent._data.addTable = false">Cerrar</button>
 			</div>
 			<h4>Añadir Registros</h4>
 			<div>

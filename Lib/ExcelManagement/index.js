@@ -12,7 +12,7 @@ class ExcelManagement {
 			data = "Existe una tabla con ese nombre";
 		} else {
 			appendFileSync(join(this.tablesPath, tableName+".csv"));
-			appendFileSync(join(this.tablesManagementPath, tableName+".json"))
+			appendFileSync(join(this.tablesManagementPath, tableName+".json"));
 			data = "Tabla Creada";
 		}
 		return data;
@@ -33,7 +33,7 @@ class ExcelManagement {
 			throw new Error("Parametro data debe ser un Objeto");
 		} else {
 			writeFileSync(join(this.tablesManagementPath, table+".json"), JSON.stringify(data));
-			writeFileSync(join(this.tablesPath, table+".csv"), Object.keys(data).join(";") + "\n")
+			writeFileSync(join(this.tablesPath, table+".csv"), Object.keys(data).join(";") + "\n");
 		}
 	}
 	addReg(table, data){
@@ -108,7 +108,7 @@ class ExcelManagement {
 		let dataJson = require(join(this.tablesManagementPath, table+".json"));
 		let dataCSV = join(this.tablesPath, table+".csv");
 
-		let data = Buffer.from(readFileSync(dataCSV)).toString()
+		let data = Buffer.from(readFileSync(dataCSV)).toString();
 		writeFileSync(dataCSV, data.split("\n").splice(index, 1).join("\n"));
 
 	}

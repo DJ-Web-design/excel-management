@@ -3,7 +3,7 @@ var AppMain = {
 	<div id="app-main" :style="!anim ? {animation: 'fade ease 1s'}:{animation: 'none'}">
 		<h2 id="title">Administrador De Registos Diarios</h2>
 		<aside id="lateral">
-			<button>Crear Nuevo Registro</button>
+			<button @click="addTable = !addTable">Crear Nueva Tabla</button>
 			<button>Editar Registros</button>
 			<button>Eliminar Registros</button>
 		</aside>
@@ -40,5 +40,5 @@ var AppMain = {
 			anim:this.$parent._data.anim,
 			addTable:false,
 		}
-	}
+	},
 };
