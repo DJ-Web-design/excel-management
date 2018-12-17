@@ -1,10 +1,16 @@
-const {existsSync, appendFileSync, unlinkSync, writeFileSync, readFileSync} = require("fs"),
+const {existsSync, appendFileSync, unlinkSync, writeFileSync, readFileSync, mkdirSync} = require("fs"),
 	{join} = require("path");
 
 class ExcelManagement {
 	constructor(){
 		this.tablesPath = join(__dirname, "../../Tables");
 		this.tablesManagementPath = join(__dirname, "../../TablesManagement");
+		
+		if (!existsSync(this.tablesPath)) 
+			mkdirSync(this.tablesPath);
+
+		if(!existsSync(this.tablesManagementPath)) 
+			mkdirSync(this.tablesManagementPath);
 	}
 	createTable(tableName){
 		let data;

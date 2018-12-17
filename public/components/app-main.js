@@ -9,23 +9,24 @@ var AppMain = {
 		</aside>
 		<div id="registros">
 			<div id="tools-container">
-				<button id="download-data">Descargar Datos</button>
+				<button class="generic-button">Descargar Datos</button>
 				<div id="search-control">
 					<input type="date" id="date-search">
-					<button>Buscar</button>
+					<button class="generic-button">Buscar</button>
 				</div>
 				<button class="add-plus">+</button>
 			</div>
 			<ul id="lista-registros">
 				<li class="item-registro">
+					<span class="item-margin"></span>
 					<span class="fecha">Registro 12/23/1999</span>
-					<span class="filas">filas(10)</span>
+					<span class="filas">filas(<span style="color:var(--primary-light);font-weight:600">10</span>)</span>
 					<br>
 					<span class="total">Total Ganado 100$</span>
 					<div class="buttons">
-						<button>Añadir</button>
-						<button>Ver</button>
-						<button>Eliminar</button>
+						<button class="generic-button">Añadir</button>
+						<button class="generic-button">Ver</button>
+						<button class="generic-button">Eliminar</button>
 					</div>
 				</li>
 			</ul>

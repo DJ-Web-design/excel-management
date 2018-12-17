@@ -1,6 +1,20 @@
+/*
+97f9f9
+a4def9
+c1e0f1
+cfbae1
+c59fc9
+*/
+
+
 * {
 	margin: 0;
 	padding: 0;
+	--primary-color:#c59fc9;
+	--primary-light:#cfbae1;
+	--secondary-main:#97f9f9;
+	--secondary-light:#c1e0f1;
+	--secondary-dark:#a4def9;
 }
 li {
 	list-style: none;
@@ -17,11 +31,32 @@ h1 {
 	text-align: center;
 	animation: fade-in ease 3s;
 }
+/*Globals*/
+.generic-button {
+	padding: 0 20px;
+	border-radius: 50px;
+	background: var(--primary-light);
+	color: white;
+	height: 30px;
+	border: none;
+	cursor: pointer; 
+}
+.fecha {
+	text-align: center;
+	display: block;
+	font-size: 20px;
+}
+.buttons {
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+/**************************************/
 #splash {
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	background:lightblue;
+	background: var(--primary-color);
 }
 @keyframes fade-in {
 	from {
@@ -48,14 +83,27 @@ h1 {
 	float: left;
 	display: block
 }
+#app-main #lateral button {
+	background: none;
+    border: none;
+    font-size: 16px;
+    color: var(--primary-light);
+    height: 40px;
+    width: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: ease .6s;
+}
+#app-main #lateral button:hover {
+	background: -webkit-radial-gradient(center, ellipse, #f2e9e4 10%, white 110%);
+}
 #app-main #registros {
 	width: 80%;
 	float: left;
 }
 #app-main #title {
-	text-align: center;
 	display: block;
-	margin: 20px auto;
+    margin: 20px 0 20px 41%;
 }
 #app-main #tools-container {
 	position: relative;
@@ -66,7 +114,7 @@ h1 {
 	color: white;
 	width: 40px;
 	height: 40px;
-	background-color: lightblue;
+	background-color: var(--primary-light);
 	border: none;
 	position: absolute;
 	right: 50px;
@@ -76,22 +124,27 @@ h1 {
 	margin: 10px 20% 0 20%;
 	display: inline-block;
 }
-#app-main #tools-container #download-data {
-	background-color: lightblue;
-	border-radius: 50px;
-	height: 30px;
-	width: 120px;
-	border:none;
-	color: white;
-	cursor: pointer;
-}
 #app-main #registros #lista-registros {
+	margin-top: 30px;
 	width: 100%;
 	overflow-y: scroll;
 }
 #app-main #registros #lista-registros .item-registro {
-	background: red;
-	height: 100px;
+	padding: 2% 10%;
+    background: #f7f7f7;
+    height: 98%;
+    width: 80%;
+    position: relative;
+    border-radius: 5px;
+}
+#app-main #registros #lista-registros .item-registro .item-margin{
+	position: absolute;
+    width: 60px;
+    background: #cfbae266;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 5px 0 0 5px;
 }
 @keyframes fade {
 	from {
@@ -102,25 +155,51 @@ h1 {
 }
 
 #add-table #container {
-	position: fixed;
-	width: 50%;
-	left: 25%;
-	top: 10%;
-	background: blue;
-	height:80%;
+    padding: 1% 10%;
+    position: fixed;
+    width: 50%;
+    left: 15%;
+    top: 10%;
+    background: #f7f7f7;
+    height: 80%;
+}
+#add-table #container h4{
+	text-align: center;
+	font-size: 24px;
 }
 #add-table #shadow {
 	position: fixed;
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,.3)
+	background: white
 }
-
+#add-table #row-list {
+	overflow-y: scroll; 
+}
+#add-table #row-list > .item{
+    position: relative;
+    padding: 10px 30px;
+    background: #d4cfd8;
+    border-radius: 5px;
+}
+#add-table #row-list > .item > .margin{
+    position: absolute;
+    display: block;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 5px 0px 0px 5px;
+    width: 30px;
+    background: var(--primary-color);
+}
+#add-table #row-list > .item > .column-name{
+	color: white;
+    font-size: 18px;
+    margin-left: 10px;
+}
 #rows-container ul {
 	overflow: scroll;
-}
-#rows-container ul li{
 	display: grid;
 }
 #rows-container ul #rows-header span{

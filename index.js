@@ -1,4 +1,4 @@
-	const express = require("express"),
+const express = require("express"),
 	  {join} = require("path"),
 	  {exec} = require("child_process");
 
@@ -33,5 +33,5 @@ app
 	})
 	.listen(PORT, ()=>{
 		console.log(`Listening on port ${PORT}`);
-		exec(`start http://localhost:${PORT}`);
+		//exec(`start http://localhost:${PORT}`);
 	});
